@@ -1,0 +1,14 @@
+#slideshow {
+    position: relative;
+}
+
+#slideshow div {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.red { background: red; }
+.green { background: green; }
+.blue { background: blue; }

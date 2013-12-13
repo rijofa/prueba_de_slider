@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<link rel="stylesheet" type="text/css" href="estilos.css">
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    var timer;
+
+    $("#slideshow > div:gt(0)").hide();
+
+    $("#slideshow")
+        // Cuando el mouse entra limpia el timer si esta inicializado
+        .mouseenter(function() {
+            if (timer) { clearInterval(timer) }
+        })
+        // Cuando el mouse sale inicializa el slideshow
+        .mouseleave(function() {
+            timer = setInterval(function() {
+                $("#slideshow > div:first")
+                    .fadeOut(1000)
+                    .next()
+                    .fadeIn(1000)
+                    .end()
+                    .appendTo("#slideshow");
+            }, 3000);
+        })
+        // Disparador de slideshow
+        .mouseleave();
+});
+
+
+
+
+
+</script>
+</head>
+<body>
+<div id="slideshow">
+<div class="red"><a href="http://www.xlogam.com/">1</a></div>
+<div class="green">2</div>
+<div class="blue">3</div>
+</div>
+
+</body>
+</html>
